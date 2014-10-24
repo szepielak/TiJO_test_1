@@ -1,0 +1,44 @@
+<div class="task-list-view">
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <div class="col-xs-4 col-sm-3">
+                <a class="btn btn-primary btn-sm" href="#/task/create"><i class="glyphicon glyphicon-plus"></i> Create New Task</a>
+            </div>
+
+            <div class="col-xs-8 col-sm-4">
+                <label for="searchTask" class="sr-only">Filter</label>
+                <input id="searchTask" class="form-control" type="search" ng-model="taskList.tasks.filter.query"
+                       placeholder="Search by title, descriptions or tags"/>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 col-sm-offset-1">
+                <div class="input-group">
+                    <label for="searchTest" class="sr-only">Search test</label>
+                    <input id="searchTest" class="form-control" type="search" ng-model="taskList.newTest.title"
+                           data-typeahead="suggestion.title for suggestion in taskList.suggestTests($viewValue)"
+                           data-typeahead-on-select="taskList.assignTaskToTest($item)" placeholder="Add selected to test..."/>
+                <span class="input-group-btn">
+                    <button class="btn btn-default" ng-click="taskList.createTestAndAssignTasks()" type="button">Create</button>
+                </span>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="clearfix"></div>
+
+    <div class="row">
+        <article class="task" ng-class="{'selected':task.selected}" ng-repeat="task in taskList.tasks.list" ng-click="task.selected=!task.selected">
+            <h4>
+                <a ng-href="#/task/{{task.id}}">{{ task.title }}</a>
+                <button class="btn btn-danger btn-xs" ng-click="taskList.deleteTask(task.id)"><i class="glyphicon glyphicon-remove"></i></button>
+            </h4>
+            <div>{{ task.description }}</div>
+            <span class="label label-default" ng-repeat="tag in task.tags">{{tag.text}}</span>
+        </article>
+    </div>
+
+    <pagination class="pull-right" ng-model="taskList.tasks.currentPage" total-items="taskList.tasks.resultCount" items-per-page="taskList.tasks.filter.size"
+                max-size="5" boundary-links="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;"
+                ng-show="taskList.tasks.isPaginationNeeded()"></pagination>
+</div>
