@@ -1,0 +1,96 @@
+/*** Global ***/
+
+h1 {
+    color: #1471bc;
+    font-family: 'Station', sans-serif;
+    font-size: 28px;
+    margin-bottom: 32px;
+}
+
+h2 {
+    font-size: 17px;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+input.form-control,
+textarea {
+    border-radius: 0;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.del-margin {
+    padding-right: 0;
+}
+
+/*** Modal ***/
+div.modal-header {
+    color: #ffffff;
+    padding: 8px;
+    background: #3071a9; /* Old browsers */
+    background: -moz-linear-gradient(left, #3071a9 0%, #428bca 99%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #3071a9), color-stop(99%, #428bca)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, #3071a9 0%, #428bca 99%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, #3071a9 0%, #428bca 99%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, #3071a9 0%, #428bca 99%); /* IE10+ */
+    background: linear-gradient(to right, #3071a9 0%, #428bca 99%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3071a9', endColorstr='#428bca', GradientType=1); /* IE6-9 */
+}
+
+div.modal-header h3 {
+    font-size: 20px;
+}
+
+/*** Navigation ***/
+
+ul.nav {
+    margin-top: -5px;
+}
+
+ul.nav li a {
+    background: #3071a9;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+ul.nav>li>a:hover,
+ul.nav>li.active>a {
+    background: #0f436d;
+}
+
+/*** Panel ***/
+
+.panel {
+    border-radius: 0;
+}
+
+.panel .panel-heading {
+    border-radius: 0;
+}
+
+.task-list-view .task {
+    cursor: pointer;
+    /*padding must be exactly the same as row's margin or container's padding */
+    padding: 15px;
+}
+
+.task-list-view .task.selected {
+    background-color: #efefef;
+}
+
+.task-list-view .task h3 {
+    margin-top: 0;
+}
+
+.task-list-view .task .label + .label {
+    margin-left: 1ex;
+}
+
+.task-list-view .task + .task {
+    border-top: 1px solid #efefef;
+}
